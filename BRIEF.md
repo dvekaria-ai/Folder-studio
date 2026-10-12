@@ -1,4 +1,4 @@
-# Project Brief — Folder Studio (working title)
+# Project Brief — What the Folder
 
 ## Overview
 An internal website for the design team that turns Mac folder names into folder icons that look like what they're named. A folder called "bar of gold" becomes a gold bar that still reads as a folder. Part gallery of ready-made designs, part AI generator: type any name, watch the folder become it, download the PNG, paste it onto a real folder through Finder's Get Info.
@@ -87,7 +87,7 @@ Per-provider tuning is allowed, but the tab + silhouette + lighting language is 
 - No true access control in v0 (link = access). Internal-only gating is a later decision.
 
 ## Open decisions
-- **Name.** Working title "Folder Studio". Candidates: Folderplay, The Folder Foundry, Unfolder, What the Folder.
+- ~~**Name.**~~ **Decided 2026-10-12: "What the Folder".** Package name `what-the-folder`.
 - **Seed mix.** Exact list of team-real folder names (needed from the team).
 - **Distribution.** Public link vs internal-only.
 - **Key ownership.** Shared team key in Vercel env (recommended) vs bring-your-own.

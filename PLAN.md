@@ -1,4 +1,4 @@
-# Plan — Folder Studio
+# Plan — What the Folder
 
 > Step-by-step build order. At the end of each phase: stop, review for bugs,
 > cross-check against the brief, and wait for explicit approval before continuing.
@@ -15,7 +15,7 @@
 ## Phase 0 — Decisions & Keys
 **Goal:** Resolve the open decisions so the build never stalls on them.
 
-- [ ] Pick the project name (candidates in brief, or a new one) and rename the repo/folder
+- [x] Pick the project name — **"What the Folder"** (decided 2026-10-12); repo/folder rename still pending
 - [ ] Collect the team-real folder names for the seed list (aim: 10–12 real + 12–14 fun generics)
 - [ ] Decide distribution: public link vs internal-only
 - [ ] Create the Google AI Studio API key; confirm it generates images
@@ -239,4 +239,13 @@
 - Bring-your-own-key mode (if shared-key spend becomes an issue)
 
 ## Deviations and Decisions Log
-- (append during the build)
+- **2026-10-12 — Name:** "What the Folder" (from the brief's candidate list). Applied to
+  `package.json` (`what-the-folder`), the page `<title>`, and the brief/plan headings.
+  Directory is still `~/Folder-studio` and the GitHub repo is still `dvekaria-ai/Folder-studio`;
+  both want renaming to `what-the-folder` (lowercase also unblocks `vercel dev`, which rejects
+  the capital F as a project name).
+- **2026-10-12 — Phase order:** Phase 1 (scaffold) was built before Phase 0 was fully closed,
+  at the user's request. Phase 0 items still open: seed name list, distribution, `GEMINI_API_KEY`,
+  key ownership.
+- **2026-10-12 — Phase 1 verification gap:** `/api/health` was not exercised through `vercel dev`
+  (blocked by the project-name casing above). Build and Vite dev server verified clean.
