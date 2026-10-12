@@ -53,7 +53,7 @@
   ├── styles/
   └── utils/        # provider abstraction, prompt template
   ```
-- [ ] Confirm dev server runs; confirm `/api/health` responds (via `vercel dev`)
+- [x] Confirm dev server runs; confirm `/api/health` responds (via `vercel dev`) — returns `{"ok":true}`
 
 ### Phase 1 Review Checklist
 - [ ] Dev server clean, no console errors
@@ -241,11 +241,12 @@
 ## Deviations and Decisions Log
 - **2026-10-12 — Name:** "What the Folder" (from the brief's candidate list). Applied to
   `package.json` (`what-the-folder`), the page `<title>`, and the brief/plan headings.
-  Directory is still `~/Folder-studio` and the GitHub repo is still `dvekaria-ai/Folder-studio`;
-  both want renaming to `what-the-folder` (lowercase also unblocks `vercel dev`, which rejects
-  the capital F as a project name).
+  Local directory renamed to `~/what-the-folder`. **The GitHub repo is still
+  `dvekaria-ai/Folder-studio`** — renaming it needs the GitHub UI (Settings → Repository name);
+  GitHub redirects the old URL, so the existing `origin` keeps working either way.
 - **2026-10-12 — Phase order:** Phase 1 (scaffold) was built before Phase 0 was fully closed,
   at the user's request. Phase 0 items still open: seed name list, distribution, `GEMINI_API_KEY`,
   key ownership.
-- **2026-10-12 — Phase 1 verification gap:** `/api/health` was not exercised through `vercel dev`
-  (blocked by the project-name casing above). Build and Vite dev server verified clean.
+- **2026-10-12 — Vercel project linked:** `vercel dev` created and linked a Vercel project named
+  `what-the-folder` (ids in `.vercel/project.json`, gitignored). Phase 9 can import into this
+  project rather than making a new one; env vars still need setting there.
