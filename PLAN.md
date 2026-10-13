@@ -70,16 +70,17 @@
 ## Phase 2 — Design Tokens & Global Styles
 **Goal:** The dark-gallery aesthetic before any feature UI.
 
-- [ ] Color tokens: near-black background scale, surface, text, accent (one playful accent color)
-- [ ] Typography: one distinctive display face for headings/microcopy + clean body face
-- [ ] Spacing scale (8px base), radius tokens, transition tokens (250–350ms ease-in-out)
-- [ ] Global styles: background, selection color, focus-visible rings, scrollbar styling
-- [ ] Empty-state and button primitives (primary / ghost)
+- [x] Color tokens: near-black background scale, surface, text, accent (one playful accent color)
+- [x] Typography: one distinctive display face for headings/microcopy + clean body face
+- [x] Spacing scale (8px base), radius tokens, transition tokens (250–350ms ease-in-out)
+- [x] Global styles: background, selection color, focus-visible rings, scrollbar styling
+- [x] Empty-state and button primitives (primary / ghost)
 
 ### Phase 2 Review Checklist
-- [ ] Tokens match the brief's dark-gallery direction
-- [ ] No hardcoded colors/spacing outside tokens
-- [ ] Focus states visible (keyboard test)
+- [x] Tokens match the brief's dark-gallery direction
+- [x] No hardcoded colors/spacing outside tokens — audited by grep; only 1px hairlines
+      and scrollbar internals remain as literals
+- [x] Focus states visible — ring verified visible on near-black; see the caveat in the log
 
 ### Phase 2 Commit
 - [ ] `git commit -m "feat: phase 2 — design tokens and global styles"`
@@ -239,6 +240,20 @@
 - Bring-your-own-key mode (if shared-key spend becomes an issue)
 
 ## Deviations and Decisions Log
+- **2026-10-12 — Phase 2 type:** Instrument Serif (display/microcopy) + Inter (body),
+  self-hosted via `@fontsource` rather than a Google Fonts CDN link — no runtime third-party
+  request, and the woff2 files get fingerprinted by Vite.
+- **2026-10-12 — Phase 2 accent:** warm gold `#ffc24b`, picked to echo the "bar of gold" seed.
+  12.4:1 on the near-black background. One gold moment per view (primary button, active nav).
+- **2026-10-12 — Phase 2 contrast:** `--c-text-faint` was going to be `#6b7177` but it measured
+  4.04:1, under AA. Lifted to `#7d838a` (5.21:1 on `--c-bg`, 4.61:1 on `--c-surface-2`).
+- **2026-10-12 — Phase 2 addition (not in the plan):** a `/styleguide` route rendering every
+  token, button variant and the empty state. Added to make this phase reviewable; it is also a
+  working reference for later phases. Drop it before launch if it is not wanted.
+- **2026-10-12 — Phase 2 verification gap:** the focus ring was confirmed by forcing
+  `--focus-ring` and screenshotting it, plus asserting the `:focus-visible` rule resolves.
+  A real Tab-key pass was not possible — CDP-driven `.focus()` is not a trusted interaction, so
+  `:focus-visible` never matches under automation. Phase 8's keyboard walkthrough covers this.
 - **2026-10-12 — Name:** "What the Folder" (from the brief's candidate list). Applied to
   `package.json` (`what-the-folder`), the page `<title>`, and the brief/plan headings.
   Local directory renamed to `~/what-the-folder`. **The GitHub repo is still

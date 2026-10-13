@@ -1,0 +1,99 @@
+/* ---------------------------------------------------------------------------
+   Design tokens — What the Folder
+   The single source of truth for colour, type, space, radius and motion.
+   Nothing outside this file should hardcode a colour or a pixel spacing value.
+   Contrast ratios noted below are against --c-bg unless stated otherwise.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* --- Backgrounds: a near-black scale, darkest first ------------------- */
+  --c-bg: #08090a;          /* page — folders float on this */
+  --c-surface-1: #0f1113;   /* cards at rest */
+  --c-surface-2: #16191c;   /* raised: inputs, hovered cards */
+  --c-surface-3: #1e2227;   /* highest: menus, active states */
+  --c-bg-veil: rgb(8 9 10 / 0.8);  /* --c-bg at 80% — sticky bars over content */
+
+  /* --- Hairlines -------------------------------------------------------- */
+  --c-border: rgb(255 255 255 / 0.08);
+  --c-border-strong: rgb(255 255 255 / 0.16);
+
+  /* --- Text ------------------------------------------------------------- */
+  --c-text: #f2f3f5;        /* 17.95:1 — headings and body */
+  --c-text-muted: #9ba1a8;  /*  7.65:1 — secondary copy */
+  --c-text-faint: #7d838a;  /*  5.21:1 — labels, counts, meta (AA at 4.61:1 on surface-2) */
+
+  /* --- Accent: warm gold. The "bar of gold" of the seed set ------------- */
+  --c-accent: #ffc24b;      /* 12.40:1 */
+  --c-accent-hover: #ffd277;
+  --c-accent-press: #e8ae3c;
+  --c-accent-ink: #1a1206;  /* 11.54:1 on --c-accent — text *on* accent fills */
+  --c-accent-soft: rgb(255 194 75 / 0.12);
+
+  /* --- Status ----------------------------------------------------------- */
+  --c-danger: #ff6b6b;      /* 7.18:1 */
+  --c-success: #4ade80;     /* 11.44:1 */
+
+  /* --- Typography ------------------------------------------------------- */
+  --font-display: 'Instrument Serif', ui-serif, Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --fs-xs: 0.75rem;    /* 12 */
+  --fs-sm: 0.875rem;   /* 14 */
+  --fs-base: 1rem;     /* 16 */
+  --fs-lg: 1.125rem;   /* 18 */
+  --fs-xl: 1.375rem;   /* 22 */
+  --fs-2xl: 1.875rem;  /* 30 */
+  --fs-3xl: 2.75rem;   /* 44 */
+  --fs-4xl: 4rem;      /* 64 */
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-base: 1.6;
+
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+
+  /* --- Spacing: 8px base, with a 4px half-step ------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* --- Radius ----------------------------------------------------------- */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-full: 999px;
+
+  /* --- Motion: the brief's 250-350ms ease-in-out band ------------------- */
+  --t-fast: 250ms;
+  --t-base: 300ms;
+  --t-slow: 350ms;
+  --ease: ease-in-out;
+  --transition-fast: var(--t-fast) var(--ease);
+  --transition-base: var(--t-base) var(--ease);
+  --transition-slow: var(--t-slow) var(--ease);
+
+  /* --- Elevation: folders float, so shadows read as lift not as chrome -- */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 24px 64px rgb(0 0 0 / 0.6);
+  --glow-accent: 0 0 0 1px var(--c-accent), 0 8px 32px rgb(255 194 75 / 0.2);
+
+  /* --- Layout ----------------------------------------------------------- */
+  --page-max: 1240px;
+  --page-gutter: var(--sp-5);
+  --blur-veil: 12px;
+  /* Breakpoint, for reference only — CSS vars can't be used in @media queries. */
+  --bp-sm: 540px;
+
+  /* --- Focus ring: one definition, used everywhere --------------------- */
+  --focus-ring: 0 0 0 2px var(--c-bg), 0 0 0 4px var(--c-accent);
+}

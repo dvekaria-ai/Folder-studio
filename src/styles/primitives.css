@@ -1,0 +1,126 @@
+/* ---------------------------------------------------------------------------
+   Primitives — the small set of reusable pieces every page builds on.
+   Buttons, the empty state, and a couple of text utilities.
+--------------------------------------------------------------------------- */
+
+/* --- Button --------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  border: 1px solid transparent;
+  border-radius: var(--r-full);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Primary — the one gold moment per view. */
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+.btn--primary:hover:not(:disabled) { background: var(--c-accent-hover); }
+.btn--primary:active:not(:disabled) { background: var(--c-accent-press); }
+
+/* Ghost — everything else. */
+.btn--ghost {
+  background: transparent;
+  color: var(--c-text);
+  border-color: var(--c-border-strong);
+}
+.btn--ghost:hover:not(:disabled) {
+  background: var(--c-surface-2);
+  border-color: var(--c-text-faint);
+}
+.btn--ghost:active:not(:disabled) { background: var(--c-surface-3); }
+
+/* Quiet — text-only, for tertiary actions. */
+.btn--quiet {
+  background: transparent;
+  color: var(--c-text-muted);
+  padding-inline: var(--sp-3);
+}
+.btn--quiet:hover:not(:disabled) { color: var(--c-text); }
+
+/* Sizes */
+.btn--lg {
+  padding: var(--sp-4) var(--sp-6);
+  font-size: var(--fs-base);
+}
+.btn--sm {
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-xs);
+}
+
+/* --- Empty state ---------------------------------------------------------- */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  padding: var(--sp-9) var(--sp-5);
+  text-align: center;
+}
+
+.empty__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--c-text);
+}
+
+.empty__body {
+  max-width: 42ch;
+  color: var(--c-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.empty__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  justify-content: center;
+  margin-top: var(--sp-2);
+}
+
+/* --- Text utilities ------------------------------------------------------- */
+
+/* Playful microcopy: the display face, italic, muted. */
+.microcopy {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  color: var(--c-text-muted);
+}
+
+/* Small caps-ish label for section headers and meta. */
+.eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+}
