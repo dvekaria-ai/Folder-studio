@@ -30,9 +30,10 @@ const apiKey = process.env.GEMINI_API_KEY
 if (!apiKey) {
   console.error(
     'GEMINI_API_KEY is not set.\n\n' +
-    'Get one at https://aistudio.google.com -> Get API key, then either:\n' +
-    '  export GEMINI_API_KEY=...        (this shell only)\n' +
-    '  echo "GEMINI_API_KEY=..." > .env (gitignored)\n\n' +
+    'Get one at https://aistudio.google.com -> Get API key, then put it in\n' +
+    'a .env file in the project root (gitignored):\n\n' +
+    '  GEMINI_API_KEY=your-key-here\n\n' +
+    'npm run seeds:generate reads that file automatically.\n\n' +
     'Nothing was generated. The placeholder seeds are still in place.'
   )
   process.exit(1)

@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "seeds:placeholder": "node scripts/make-placeholder-seeds.mjs",
-    "seeds:generate": "node scripts/generate-seeds.mjs"
+    "seeds:generate": "node --env-file-if-exists=.env scripts/generate-seeds.mjs"
   },
   "dependencies": {
     "@fontsource/instrument-serif": "^5.3.0",
