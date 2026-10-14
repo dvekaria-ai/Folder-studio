@@ -1,1 +1,282 @@
-[]
+[
+  {
+    "name": "bar of gold",
+    "file": "bar-of-gold.png",
+    "tags": [
+      "gold",
+      "money",
+      "treasure",
+      "shiny",
+      "metal"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "waffle",
+    "file": "waffle.png",
+    "tags": [
+      "food",
+      "breakfast",
+      "golden",
+      "squares"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "floppy disk",
+    "file": "floppy-disk.png",
+    "tags": [
+      "retro",
+      "tech",
+      "save",
+      "computer",
+      "90s"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "toast",
+    "file": "toast.png",
+    "tags": [
+      "food",
+      "breakfast",
+      "bread",
+      "golden"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "camera",
+    "file": "camera.png",
+    "tags": [
+      "photo",
+      "gear",
+      "lens",
+      "tech"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "cardboard box",
+    "file": "cardboard-box.png",
+    "tags": [
+      "shipping",
+      "moving",
+      "plain",
+      "storage"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "manila envelope",
+    "file": "manila-envelope.png",
+    "tags": [
+      "office",
+      "paper",
+      "mail",
+      "admin"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "pizza box",
+    "file": "pizza-box.png",
+    "tags": [
+      "food",
+      "takeout",
+      "cardboard"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "treasure chest",
+    "file": "treasure-chest.png",
+    "tags": [
+      "pirate",
+      "gold",
+      "storage",
+      "wood"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "filing cabinet",
+    "file": "filing-cabinet.png",
+    "tags": [
+      "office",
+      "storage",
+      "admin",
+      "metal"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "lunchbox",
+    "file": "lunchbox.png",
+    "tags": [
+      "food",
+      "retro",
+      "school",
+      "metal"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "vinyl record",
+    "file": "vinyl-record.png",
+    "tags": [
+      "music",
+      "retro",
+      "black",
+      "audio"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "briefcase",
+    "file": "briefcase.png",
+    "tags": [
+      "office",
+      "work",
+      "travel",
+      "leather"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "origami crane",
+    "file": "origami-crane.png",
+    "tags": [
+      "paper",
+      "craft",
+      "folded",
+      "bird"
+    ],
+    "group": "fun",
+    "placeholder": true
+  },
+  {
+    "name": "brand refresh",
+    "file": "brand-refresh.png",
+    "tags": [
+      "work",
+      "branding",
+      "design"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "design system",
+    "file": "design-system.png",
+    "tags": [
+      "work",
+      "design",
+      "components"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "client work",
+    "file": "client-work.png",
+    "tags": [
+      "work",
+      "clients",
+      "projects"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "screenshots",
+    "file": "screenshots.png",
+    "tags": [
+      "work",
+      "assets",
+      "images"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "receipts",
+    "file": "receipts.png",
+    "tags": [
+      "work",
+      "finance",
+      "admin",
+      "expenses"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "inspiration",
+    "file": "inspiration.png",
+    "tags": [
+      "work",
+      "moodboard",
+      "reference"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "exports",
+    "file": "exports.png",
+    "tags": [
+      "work",
+      "assets",
+      "output"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "archive",
+    "file": "archive.png",
+    "tags": [
+      "work",
+      "storage",
+      "old"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "q3 planning",
+    "file": "q3-planning.png",
+    "tags": [
+      "work",
+      "planning",
+      "strategy"
+    ],
+    "group": "work",
+    "placeholder": true
+  },
+  {
+    "name": "work in progress",
+    "file": "work-in-progress.png",
+    "tags": [
+      "work",
+      "wip",
+      "drafts"
+    ],
+    "group": "work",
+    "placeholder": true
+  }
+]

@@ -92,15 +92,16 @@
 ## Phase 3 — Seed Library
 **Goal:** The gallery has something to show on day one.
 
-- [ ] Generate the ~24 starter folder PNGs in the reference style (square, folder-with-tab silhouette, studio lighting, dark-friendly)
-- [ ] Save to `public/seeds/` with clean filenames (`bar-of-gold.png`, …)
-- [ ] Write `src/data/seeds.json` manifest: `{ name, file, tags[] }` per seed
-- [ ] Composable `useSeeds()` exposing the list + search filter
+- [ ] Generate the ~24 starter folder PNGs in the reference style — **BLOCKED on `GEMINI_API_KEY`.**
+      Generator written and tested against a stubbed provider: `npm run seeds:generate`
+- [x] Save to `public/seeds/` with clean filenames (`bar-of-gold.png`, …) — 24 placeholder PNGs
+- [x] Write `src/data/seeds.json` manifest: `{ name, file, tags[], group, placeholder }` per seed
+- [x] Composable `useSeeds()` exposing the list + search filter
 
 ### Phase 3 Review Checklist
-- [ ] Every seed keeps the folder tab readable at small sizes
-- [ ] Style feels like one family, not random images
-- [ ] Manifest loads with no missing files
+- [x] Every seed keeps the folder tab readable at small sizes — checked on a 64px contact sheet
+- [ ] Style feels like one family, not random images — **cannot be judged until real art exists**
+- [x] Manifest loads with no missing files — all 24 verified present
 
 ### Phase 3 Commit
 - [ ] `git commit -m "feat: phase 3 — seed library"`
@@ -240,6 +241,27 @@
 - Bring-your-own-key mode (if shared-key spend becomes an issue)
 
 ## Deviations and Decisions Log
+- **2026-10-14 — Phase 3 blocked, then worked around:** `GEMINI_API_KEY` is absent from the
+  shell, from every `.env`, and from the Vercel project, so no real seed art could be generated.
+  Rather than stall, the phase shipped everything around the images: a 24-name seed list,
+  `npm run seeds:placeholder` (folder-silhouette stand-ins so Phase 4 can proceed), the manifest,
+  and `useSeeds()`. Run `npm run seeds:generate` once the key exists — it overwrites the PNGs and
+  flips every `placeholder` flag to `false`.
+- **2026-10-14 — Phase 3 seed names:** 14 fun generics are final. The other 10 are *proposed*
+  everyday work names standing in for the team-real list (Phase 0, still open). Edit
+  `scripts/seed-names.mjs` and re-run the generator; nothing else needs touching.
+- **2026-10-14 — Phase 5 work landed early:** the keying pass (`lib/keyOutBackground.js`) and the
+  house prompt template (`src/utils/promptTemplate.js`) were needed by the seed generator, so they
+  exist now. `/api/generate` imports the same two modules in Phase 5 — one pipeline, not two.
+  Keying is flood-fill-from-the-border rather than a plain luminance threshold, which is what
+  preserves dark detail *inside* a subject; verified on a synthetic case with a pure-black slot.
+- **2026-10-14 — Phase 6 work landed early:** `src/utils/slugify.js` was needed for seed
+  filenames. All brief-specified cases pass, plus unicode, emoji and 100-char input. Known
+  limitation: an all-CJK name slugifies to `custom-folder`, acceptable for an English-language
+  internal tool.
+- **2026-10-14 — Search behaviour:** `useSeeds()` matches substrings across name and tags, so
+  "camer" finds the camera. Side effect: "gold" also returns the waffle and the toast, both
+  tagged `golden`. Forgiving beats strict at this gallery size — revisit if the library grows.
 - **2026-10-12 — Phase 2 type:** Instrument Serif (display/microcopy) + Inter (body),
   self-hosted via `@fontsource` rather than a Google Fonts CDN link — no runtime third-party
   request, and the woff2 files get fingerprinted by Vite.
